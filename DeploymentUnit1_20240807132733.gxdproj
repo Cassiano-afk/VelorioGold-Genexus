@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CreatePackage">
+
+	<!-- Model Properties -->
+	<PropertyGroup>
+		<ModelId>2</ModelId>
+		<Generator>.NET</Generator>
+		<CacheExpiration>36</CacheExpiration>
+		<OpenAPI>true</OpenAPI>
+		<SignificantObjectNameLength>128</SignificantObjectNameLength>
+		<StaticDir>.</StaticDir>
+		<NationalLanguageSupport>true</NationalLanguageSupport>
+		<WebNotifProvider>GeneXus</WebNotifProvider>
+		<CloudServices>true</CloudServices>
+		<OfflineSupport>false</OfflineSupport>
+		<Https>false</Https>
+		<Searchable>false</Searchable>
+		<SQLServer>true</SQLServer>
+		<IntegratedSecurity>true</IntegratedSecurity>
+		<GAMDBMSType>12</GAMDBMSType>
+		<LogEnabled>true</LogEnabled>
+		<LogJsonFormat>false</LogJsonFormat>
+	</PropertyGroup>
+
+	<!-- Deploy Properties -->
+	<PropertyGroup>
+		<ApplicationKey>667F13315BF42E36BAFCC914141D1CF1DA161BB163F0A7689DCAF74E861B0E21</ApplicationKey>
+		<ApplicationServer>IIS</ApplicationServer>
+		<AppName>DeploymentUnit1_20240807132733</AppName>
+		<AppUpdate>NONE</AppUpdate>
+		<DeploymentUnit>DeploymentUnit1</DeploymentUnit>
+		<DeployTarget>LOCAL</DeployTarget>
+		<DeployType>BINARIES</DeployType>
+		<EnableKBN>False</EnableKBN>
+		<ImagesInvolved>true</ImagesInvolved>
+		<IncludeGAMBackend>True</IncludeGAMBackend>
+		<IsCMD>false</IsCMD>
+		<IsWEBUI>true</IsWEBUI>
+		<KBPath>C:\KBs\GoldLegacy</KBPath>
+		<Namespace>GeneXus.Programs</Namespace>
+		<PackageFormat>Automatic</PackageFormat>
+		<ProjectName>DeploymentUnit1_20240807132733</ProjectName>
+		<RestSpecFolder>C:\KBs\GoldLegacy\GXRESTSPC\GoldLegacy</RestSpecFolder>
+		<SourcePath>C:\KBs\GoldLegacy\NETSQLServer002</SourcePath>
+		<TargetJRE>9</TargetJRE>
+		<TimeStamp>20240807132733</TimeStamp>
+		<UseAppServerDataSource>False</UseAppServerDataSource>
+	</PropertyGroup>
+
+	<!-- General Properties -->
+	<PropertyGroup>
+		<GX_PROGRAM_DIR Condition=" '$(GX_PROGRAM_DIR)' == '' ">C:\Program Files (x86)\GeneXus\GeneXus18</GX_PROGRAM_DIR>
+		<AdditionalItems Condition=" '$(AdditionalItems)' == ''">$(DeploymentUnit)_user.gxdproj</AdditionalItems>
+	</PropertyGroup>
+
+	<!-- Destination paths -->
+	<PropertyGroup>
+		<DeployFileFullPath>$(SourcePath)\Deploy\$(DeployTarget)</DeployFileFullPath>
+		<DeployFullPath>$(DeployFileFullPath)\$(DeploymentUnit)\$(TimeStamp)</DeployFullPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(DeployType)' == 'SOURCES' or ('$(Generator)' == 'Java' and '$(IsCMD)' == 'false' and '$(JavaFrameWork)'=='JAVA_FRAMEWORK_SPRINGBOOT')">
+		<DeployAppDir>$(DeployFullPath)\web</DeployAppDir>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(DeployType)' != 'SOURCES' and ('$(Generator)' != 'Java' or '$(IsCMD)' == 'true' or '$(JavaFrameWork)'!='JAVA_FRAMEWORK_SPRINGBOOT')">
+		<DeployAppDir>$(DeployFullPath)</DeployAppDir>
+	</PropertyGroup>
+
+	<!-- Languages -->
+	<ItemGroup> 
+		<Language Include="Portuguese">
+			<QualifiedName>Portuguese</QualifiedName>
+			<Description>Portuguese</Description>
+			<Code>pt</Code>
+			<MessageCode>por</MessageCode>
+		</Language>
+	</ItemGroup>
+
+	<!-- Files -->
+	<ItemGroup> 
+		<ExternalFile Include="bin\GeneXusSecurity.dll"/>
+		<ExternalFile Include="bin\GeneXusSecurityCommon.dll"/>
+		<ExternalFile Include="bin\GeneXus.dll"/>
+		<ExternalFile Include="GeneXus.services"/>
+		<ExternalFile Include="GeneXus\SD\Synchronization\OfflineEventReplicator.svc"/>
+	</ItemGroup>
+
+	<!-- Objects -->
+	<ItemGroup> 
+		<Object Include="SidebarItemsDP">
+			<Type>DataProvider</Type>
+			<QualifiedName>General.UI.SidebarItemsDP</QualifiedName>
+			<Description>Sidebar Items DP</Description>
+			<Module>General.UI</Module>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<Online>true</Online>
+		</Object>
+		<Object Include="GoldLegacy">
+			<Type>DesignSystem</Type>
+			<QualifiedName>Design.GoldLegacy</QualifiedName>
+			<Description>Gold Legacy</Description>
+			<Module>Design</Module>
+		</Object>
+		<Object Include="Unanimo">
+			<Type>DesignSystem</Type>
+			<QualifiedName>GeneXusUnanimo.Unanimo</QualifiedName>
+			<Description>Unanimo</Description>
+			<Module>GeneXusUnanimo</Module>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="UnanimoControls">
+			<Type>DesignSystem</Type>
+			<QualifiedName>GeneXusUnanimo.UnanimoControls</QualifiedName>
+			<Description>Unanimo Controls</Description>
+			<Module>GeneXusUnanimo</Module>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="UnanimoWeb">
+			<Type>DesignSystem</Type>
+			<QualifiedName>GeneXusUnanimo.UnanimoWeb</QualifiedName>
+			<Description>Unanimo Web</Description>
+			<Module>GeneXusUnanimo</Module>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="MasterGold">
+			<Type>MasterPage</Type>
+			<QualifiedName>Masters.MasterGold</QualifiedName>
+			<Description>Master Gold</Description>
+			<Module>Masters</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="MasterPrompt">
+			<Type>MasterPage</Type>
+			<QualifiedName>General.UI.MasterPrompt</QualifiedName>
+			<Description>Prompt Master Page</Description>
+			<Module>General.UI</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="MasterUnanimoSidebar">
+			<Type>MasterPage</Type>
+			<QualifiedName>General.UI.MasterUnanimoSidebar</QualifiedName>
+			<Description>Master Unanimo Sidebar</Description>
+			<Module>General.UI</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAM_BuildAppURL">
+			<Type>Procedure</Type>
+			<QualifiedName>GAM_BuildAppURL</QualifiedName>
+			<Description>GAM_Build App URL</Description>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<CallProtocol>INTERNAL</CallProtocol>
+			<Online>true</Online>
+		</Object>
+		<Object Include="GAM_CheckUserActivationMethod">
+			<Type>Procedure</Type>
+			<QualifiedName>GAM_CheckUserActivationMethod</QualifiedName>
+			<Description>Check User Activation Method</Description>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<CallProtocol>INTERNAL</CallProtocol>
+			<Online>true</Online>
+		</Object>
+		<Object Include="GAM_ConvertErrorsToMessages">
+			<Type>Procedure</Type>
+			<QualifiedName>GAM_ConvertErrorsToMessages</QualifiedName>
+			<Description>GAM_Convert Errors To Messages</Description>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<CallProtocol>INTERNAL</CallProtocol>
+			<Online>true</Online>
+		</Object>
+		<Object Include="GAM_GetTextPasswordRequirement">
+			<Type>Procedure</Type>
+			<QualifiedName>GAM_GetTextPasswordRequirement</QualifiedName>
+			<Description>GAM_Get Text Password Requirement</Description>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<CallProtocol>INTERNAL</CallProtocol>
+			<Online>true</Online>
+		</Object>
+		<Object Include="IsAuthorized">
+			<Type>Procedure</Type>
+			<QualifiedName>General.Security.IsAuthorized</QualifiedName>
+			<Description>Is Authorized</Description>
+			<Module>General.Security</Module>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<CallProtocol>INTERNAL</CallProtocol>
+			<Online>true</Online>
+		</Object>
+		<Object Include="ListPrograms">
+			<Type>Procedure</Type>
+			<QualifiedName>General.UI.ListPrograms</QualifiedName>
+			<Description>List Programs</Description>
+			<Module>General.UI</Module>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<CallProtocol>INTERNAL</CallProtocol>
+			<Online>true</Online>
+		</Object>
+		<Object Include="GridState">
+			<Type>SDT</Type>
+			<QualifiedName>GeneXus.Common.GridState</QualifiedName>
+			<Description>Grid State</Description>
+			<Module>GeneXus.Common</Module>
+			<Collection>false</Collection>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="Messages_Message">
+			<Type>SDT</Type>
+			<QualifiedName>GeneXus.Common.Messages</QualifiedName>
+			<Description>Messages</Description>
+			<Module>GeneXus.Common</Module>
+			<Collection>true</Collection>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="ProgramNames_ProgramName">
+			<Type>SDT</Type>
+			<QualifiedName>General.UI.ProgramNames</QualifiedName>
+			<Description>Program Names</Description>
+			<Module>General.UI</Module>
+			<Collection>true</Collection>
+		</Object>
+		<Object Include="SidebarItems_SidebarItem">
+			<Type>SDT</Type>
+			<QualifiedName>GeneXusUnanimo.SidebarItems</QualifiedName>
+			<Description>Sidebar Items</Description>
+			<Module>GeneXusUnanimo</Module>
+			<Collection>true</Collection>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="TransactionContext">
+			<Type>SDT</Type>
+			<QualifiedName>General.UI.TransactionContext</QualifiedName>
+			<Description>Transaction Context</Description>
+			<Module>General.UI</Module>
+			<Collection>false</Collection>
+		</Object>
+		<Object Include="Teste">
+			<Type>ThemeForWeb</Type>
+			<QualifiedName>Teste</QualifiedName>
+			<Description>Teste</Description>
+		</Object>
+		<Object Include="GerenciadorDeTransmissoes">
+			<Type>Transaction</Type>
+			<QualifiedName>Transactions.GerenciadorDeTransmissoes</QualifiedName>
+			<Description>Gerenciador De Transmissoes</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<BC>false</BC>
+			<Online>true</Online>
+		</Object>
+		<Object Include="Obitos">
+			<Type>Transaction</Type>
+			<QualifiedName>Transactions.Obitos</QualifiedName>
+			<Description>Óbitos | Velório Gold</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<GenOpenAPI>false</GenOpenAPI>
+			<BC>false</BC>
+			<Online>true</Online>
+		</Object>
+		<Object Include="Sidebar">
+			<Type>UserControl</Type>
+			<QualifiedName>GeneXusUnanimo.Sidebar</QualifiedName>
+			<Description>Sidebar</Description>
+			<Module>GeneXusUnanimo</Module>
+			<Library>Unanimo_chameleon</Library>
+			<IsInterface>true</IsInterface>
+		</Object>
+		<Object Include="GerenciadorDeTransmissoesGeneral">
+			<Type>WebComponent</Type>
+			<QualifiedName>Transactions.GerenciadorDeTransmissoesGeneral</QualifiedName>
+			<Description>Gerenciador De Transmissoes General</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="BuscaVelorio">
+			<Type>WebPanel</Type>
+			<QualifiedName>WebPanels.BuscaVelorio</QualifiedName>
+			<Description>Assista a um velório online</Description>
+			<Module>WebPanels</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Deploy">
+			<Type>WebPanel</Type>
+			<QualifiedName>Deploy</QualifiedName>
+			<Description>Deploy</Description>
+			<Main>true</Main>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+			<Selected>true</Selected>
+		</Object>
+		<Object Include="GAMExampleChangePassword">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleChangePassword</QualifiedName>
+			<Description>GAM_ChangePassword</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleIDPLogin">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleIDPLogin</QualifiedName>
+			<Description>GAM_IDPLogin</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleLogin">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleLogin</QualifiedName>
+			<Description>GAM_Login</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleNotAuthorized">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleNotAuthorized</QualifiedName>
+			<Description>GAM_NotAuthorized</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleOTPAuthentication">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleOTPAuthentication</QualifiedName>
+			<Description>GAM_InsertOTPcodetologin</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleRecoverPasswordStep1">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleRecoverPasswordStep1</QualifiedName>
+			<Description>GAM_Recoverpasswordstep1</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleRecoverPasswordStep2">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleRecoverPasswordStep2</QualifiedName>
+			<Description>GAM_Recoverpasswordstep2</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleRegisterUser">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleRegisterUser</QualifiedName>
+			<Description>GAM_Registeruser</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMExampleUpdateRegisterUser">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMExampleUpdateRegisterUser</QualifiedName>
+			<Description>GAM_Updateregisteruser</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="GAMHome">
+			<Type>WebPanel</Type>
+			<QualifiedName>GAMHome</QualifiedName>
+			<Description>GAM_Home</Description>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Gx0010">
+			<Type>WebPanel</Type>
+			<QualifiedName>Transactions.Gx0010</QualifiedName>
+			<Description>Selection List Obitos</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Gx0030">
+			<Type>WebPanel</Type>
+			<QualifiedName>Transactions.Gx0030</QualifiedName>
+			<Description>Selection List Estados</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Gx0041">
+			<Type>WebPanel</Type>
+			<QualifiedName>Transactions.Gx0041</QualifiedName>
+			<Description>Selection List Id</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Home">
+			<Type>WebPanel</Type>
+			<QualifiedName>WebPanels.Home</QualifiedName>
+			<Description>Home</Description>
+			<Module>WebPanels</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Introducao">
+			<Type>WebPanel</Type>
+			<QualifiedName>WebPanels.Introducao</QualifiedName>
+			<Description>Introducao</Description>
+			<Module>WebPanels</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="NotAuthorized">
+			<Type>WebPanel</Type>
+			<QualifiedName>General.Security.NotAuthorized</QualifiedName>
+			<Description>Not Authorized web panel</Description>
+			<Module>General.Security</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="PasswordValidator">
+			<Type>WebPanel</Type>
+			<QualifiedName>WebPanels.PasswordValidator</QualifiedName>
+			<Module>WebPanels</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="Transmissao">
+			<Type>WebPanel</Type>
+			<QualifiedName>WebPanels.Transmissao</QualifiedName>
+			<Description>Transmissao</Description>
+			<Module>WebPanels</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="VeloriosAoVivo1">
+			<Type>WebPanel</Type>
+			<QualifiedName>WebPanels.VeloriosAoVivo1</QualifiedName>
+			<Description>Cêrimonias Disponiveis</Description>
+			<Module>WebPanels</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="ViewGerenciadorDeTransmissoes">
+			<Type>WebPanel</Type>
+			<QualifiedName>Transactions.ViewGerenciadorDeTransmissoes</QualifiedName>
+			<Description>View Gerenciador De Transmissoes</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="WWGerenciadorDeTransmissoes">
+			<Type>WebPanel</Type>
+			<QualifiedName>Transactions.WWGerenciadorDeTransmissoes</QualifiedName>
+			<Description>Work With Gerenciador De Transmissoes</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+		<Object Include="WWObitos">
+			<Type>WebPanel</Type>
+			<QualifiedName>Transactions.WWObitos</QualifiedName>
+			<Description>Work With Óbitos | Velório Gold</Description>
+			<Module>Transactions</Module>
+			<Generate>true</Generate>
+			<WebApplication>idDefault</WebApplication>
+		</Object>
+	</ItemGroup>
+
+	<!-- Selected Objects -->
+	<ItemGroup> 
+		<SelectedObject Include="Deploy">
+			<Type>WebPanel</Type>
+			<QualifiedName>Deploy</QualifiedName>
+			<Description>Deploy</Description>
+		</SelectedObject>
+	</ItemGroup>
+
+	<Target Name="ValidateDeployment">
+		<!-- overrideable on custom targets -->
+
+	</Target>
+
+	<Import Project="$(GX_PROGRAM_DIR)\Imports.targets"/>
+	<Import Project="$(AdditionalItems)" Condition="'$(AdditionalItems)'!='' and Exists('$(AdditionalItems)')" />
+
+</Project>
+

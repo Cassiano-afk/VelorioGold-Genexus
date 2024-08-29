@@ -1,0 +1,88 @@
+<?xml-stylesheet type='text/xsl' href='prgs.xsl'?><Objects>
+  <Charset>UTF-8</Charset>
+  <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus18/</Path>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>Transactions.WWObitos</ObjName>
+    <ObjDesc>Transactions.Work With Óbitos | Velório Gold</ObjDesc>
+    <ObjLink>transactions.wwobitos.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>Transactions.WWEstados</ObjName>
+    <ObjDesc>Transactions.Estadoss</ObjDesc>
+    <ObjLink>transactions.wwestados.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>Transactions.WWGerenciadorDeTransmissoes</ObjName>
+    <ObjDesc>Transactions.Work With Gerenciador De Transmissões | Velório Gold</ObjDesc>
+    <ObjLink>transactions.wwgerenciadordetransmissoes.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>WebPanels.Home</ObjName>
+    <ObjDesc>WebPanels.Home | Velório Gold</ObjDesc>
+    <ObjLink>webpanels.home.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>WebPanels.Introducao</ObjName>
+    <ObjDesc>WebPanels.Introducao</ObjDesc>
+    <ObjLink>webpanels.introducao.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>GAMExampleLogin</ObjName>
+    <ObjDesc>Login</ObjDesc>
+    <ObjLink>gamexamplelogin.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>GAMExampleNotAuthorized</ObjName>
+    <ObjDesc>Não autorizado</ObjDesc>
+    <ObjLink>gamexamplenotauthorized.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>GAMHome</ObjName>
+    <ObjDesc>Home</ObjDesc>
+    <ObjLink>gamhome.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>GAMExampleRegisterUser</ObjName>
+    <ObjDesc>Registrar usuário</ObjDesc>
+    <ObjLink>gamexampleregisteruser.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>GAMExampleSSOLogin</ObjName>
+    <ObjDesc>Single Sign-On</ObjDesc>
+    <ObjLink>gamexamplessologin.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>Deploy</ObjName>
+    <ObjDesc>Deploy</ObjDesc>
+    <ObjLink>deploy.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>WebPanel1</ObjName>
+    <ObjDesc>Web Panel1</ObjDesc>
+    <ObjLink>webpanel1.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>WebPanels.TransmissaoIndisponivel</ObjName>
+    <ObjDesc>WebPanels.Transmissao Indisponivel</ObjDesc>
+    <ObjLink>webpanels.transmissaoindisponivel.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>Site</ObjName>
+    <ObjDesc>Site</ObjDesc>
+    <ObjLink>site.aspx</ObjLink>
+  </Object>
+</Objects>

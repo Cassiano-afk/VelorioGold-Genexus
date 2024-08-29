@@ -1,0 +1,12 @@
+@layer Design.GoldLegacy{
+:root
+{
+	--colors_primary : #ffc709;
+	--colors_primary-hover : #ffd752;
+	--colors_secondary : #223C51;
+	--colors_fontcolor : #4F4F4F;
+	--colors_ghostwhite : f7f7ff;
+	--colors_fontcolor1 : cccccc;
+
+}
+}

@@ -1,0 +1,50 @@
+@layer AnyStylesImagesTokens {
+:root
+{
+	--GX-Image_selectRow : url(../selectRow.png);
+	--GX-Image_IconeMenu : url(../IconeMenu.png);
+	--GX-Image_IconeRelogio : url(../IconeRelogio.png);
+	--GX-Image_IconeLocalizacao : url(../IconeLocalizacao.png);
+	--GX-Image_IconeCompartilhar : url(../IconeCompartilhar.png);
+	--GX-Image_LogoFacebook : url(../LogoFacebook.png);
+	--GX-Image_LogoInstagram : url(../LogoInstagram.png);
+	--GX-Image_LogoLinkedin : url(../LogoLinkedin.png);
+	--GX-Image_General_UI_LogoGold : url(../General.UI.LogoGold.png);
+	--GX-Image_Seta : url(../Seta.png);
+	--GX-Image_Design_LinhaH : url(../Design.LinhaH.png);
+	--GX-Image_PageFirst : url(PageFirst.gif);
+	--GX-Image_PageLast : url(PageLast.gif);
+	--GX-Image_PageNext : url(PageNext.gif);
+	--GX-Image_PagePrevious : url(PagePrevious.gif);
+	--GX-Image_GAM_GAMButtonFacebook : url(../GAM.GAMButtonFacebook.png);
+	--GX-Image_GAM_GAMButtonTwitterSmall : url(../GAM.GAMButtonTwitterSmall.png);
+	--GX-Image_GAM_GAMButtonTwitter : url(../GAM.GAMButtonTwitter.png);
+	--GX-Image_GAM_GAMButtonGoogle : url(../GAM.GAMButtonGoogle.png);
+	--GX-Image_GAM_GAMButtonGoogleSmall : url(../GAM.GAMButtonGoogleSmall.png);
+	--GX-Image_GAM_GAMButtonGAMRemoteSmall : url(../GAM.GAMButtonGAMRemoteSmall.png);
+	--GX-Image_GAM_GAMButtonGAMRemote : url(../GAM.GAMButtonGAMRemote.png);
+}
+
+.GX_Image_selectRow_Class{content: var(--GX-Image_selectRow);}
+.GX_Image_IconeMenu_Class{content: var(--GX-Image_IconeMenu);}
+.GX_Image_IconeRelogio_Class{content: var(--GX-Image_IconeRelogio);}
+.GX_Image_IconeLocalizacao_Class{content: var(--GX-Image_IconeLocalizacao);}
+.GX_Image_IconeCompartilhar_Class{content: var(--GX-Image_IconeCompartilhar);}
+.GX_Image_LogoFacebook_Class{content: var(--GX-Image_LogoFacebook);}
+.GX_Image_LogoInstagram_Class{content: var(--GX-Image_LogoInstagram);}
+.GX_Image_LogoLinkedin_Class{content: var(--GX-Image_LogoLinkedin);}
+.GX_Image_General_UI_LogoGold_Class{content: var(--GX-Image_General_UI_LogoGold);}
+.GX_Image_Seta_Class{content: var(--GX-Image_Seta);}
+.GX_Image_Design_LinhaH_Class{content: var(--GX-Image_Design_LinhaH);}
+.GX_Image_PageFirst_Class{content: var(--GX-Image_PageFirst);}
+.GX_Image_PageLast_Class{content: var(--GX-Image_PageLast);}
+.GX_Image_PageNext_Class{content: var(--GX-Image_PageNext);}
+.GX_Image_PagePrevious_Class{content: var(--GX-Image_PagePrevious);}
+.GX_Image_GAM_GAMButtonFacebook_Class{content: var(--GX-Image_GAM_GAMButtonFacebook);}
+.GX_Image_GAM_GAMButtonTwitterSmall_Class{content: var(--GX-Image_GAM_GAMButtonTwitterSmall);}
+.GX_Image_GAM_GAMButtonTwitter_Class{content: var(--GX-Image_GAM_GAMButtonTwitter);}
+.GX_Image_GAM_GAMButtonGoogle_Class{content: var(--GX-Image_GAM_GAMButtonGoogle);}
+.GX_Image_GAM_GAMButtonGoogleSmall_Class{content: var(--GX-Image_GAM_GAMButtonGoogleSmall);}
+.GX_Image_GAM_GAMButtonGAMRemoteSmall_Class{content: var(--GX-Image_GAM_GAMButtonGAMRemoteSmall);}
+.GX_Image_GAM_GAMButtonGAMRemote_Class{content: var(--GX-Image_GAM_GAMButtonGAMRemote);}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<OfficeSupport>false</OfficeSupport>
+		<FrontEndSupport>true</FrontEndSupport>
+		<ChatbotSupport>false</ChatbotSupport>
+		<ConfigSupport>true</ConfigSupport>
+		<SearchableSupport>false</SearchableSupport>
+		<GrpcClientSupport>false</GrpcClientSupport>
+		<GeographySupport>false</GeographySupport>
+		<CryptoSupport>false</CryptoSupport>
+		<MailSupport>false</MailSupport>
+		<FileSupport>false</FileSupport>
+		<SDNotificationSupport>false</SDNotificationSupport>
+		<WebNotificationSupport>false</WebNotificationSupport>
+	</PropertyGroup>
+
+</Project>

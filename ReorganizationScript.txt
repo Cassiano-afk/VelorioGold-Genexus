@@ -1,0 +1,3 @@
+ALTER TABLE [GerenciadorDeTransmissoes] ADD [AoVivo] BIT NOT NULL CONSTRAINT AoVivoGerenciadorDeTransmissoes_DEFAULT DEFAULT convert(bit, 0);
+ALTER TABLE [GerenciadorDeTransmissoes] DROP CONSTRAINT AoVivoGerenciadorDeTransmissoes_DEFAULT;
+

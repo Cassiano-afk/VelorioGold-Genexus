@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<!--
+		_AdditionalDirectory_: can be used to copy the whole content (recursively) of the specified path as part of the deployment.
+		<AdditionalDirectory>Some directory to copy</AdditionalDirectory>
+		-->
+
+		<!--
+		_AdditionalFileDestination_: you can add a directory where every AdditionalFile will be copied (relative to the root) -->
+		<AdditionalFileDestination></AdditionalFileDestination>
+
+		<!--
+		_ExcludeDatabaseDrivers_: configures if the deployment must include the database drivers or not (they are part of the deployment by default). Set value to 'true' to exclude them.
+		<ExcludeDatabaseDrivers>true</ExcludeDatabaseDrivers>
+		 -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--
+		_AdditionalFile_: list of files to be included as part of the deployment. -->
+		<!--AdditionalFile Include="Some File to copy"/-->
+
+		<!--
+		This file will be copied to $(DeployFullPath)\$(AdditionalFileDestination)
+		<AdditionalFile Include="C:\myfiles\myfile.txt"/>
+
+		This file will be copied to $(DeployFullPath)\TargetDir
+		<AdditionalFile Include="C:\myfiles\my other file.txt">
+			<RelativeTargetDir>TargetDir</RelativeTargetDir>
+		</AdditionalFile>
+		-->
+
+	</ItemGroup>
+
+	<Target Name="RemoveExtraFiles">
+
+		<!-- Uncomment this section in case you want to delete files right before creating the package
+		<ItemGroup>
+			<UnneededFiles Include="$(DeployFullPath)\your\file\goes\here"/>
+		</ItemGroup>
+
+		<Message Text="RemovingUserExcludedFiles" Importance="high" />
+		<Delete	Files="@(UnneededFiles)"/>
+		-->
+	</Target>
+
+
+	<Target Name="BeforePackaging" DependsOnTargets="RemoveExtraFiles">
+
+	</Target>
+
+
+</Project>
